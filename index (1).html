@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nithish Kumar — AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-name">NK</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo">NK<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#achievements" class="nav-link">Achievements</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="mailto:nithishkumarsaravanan33@gmail.com" class="nav-cta">Hire Me</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#hero" class="mob-link">Home</a></li>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#achievements" class="mob-link">Achievements</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+
+    <div class="hero-content reveal">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for opportunities
+      </div>
+      <h1 class="hero-name">Nithish<br><span class="accent">Kumar.</span></h1>
+      <p class="hero-title">
+        <span class="typed-wrap"><span id="typed"></span><span class="cursor-blink">|</span></span>
+      </p>
+      <p class="hero-tagline">
+        Building intelligent systems at the intersection of AI, backend engineering, and real-world impact.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View Work</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nithish-kumar-saravanan10/" target="_blank" rel="noopener" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:nithishkumarsaravanan33@gmail.com" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label reveal">About</div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2 class="section-heading">Crafting AI that <span class="accent">matters.</span></h2>
+          <p>I'm Nithish Kumar, a Computer Science student on a focused path toward becoming an AI/ML Engineer. I build systems that sit at the crossroads of intelligent automation and practical software — things that solve real problems, not just demo well.</p>
+          <p>My work spans backend APIs, machine learning pipelines, and multi-agent AI systems. I think deeply about architecture, care obsessively about reliability, and ship with the confidence of someone who has won a hackathon with a production-grade system under pressure.</p>
+          <p>Right now, I'm pushing toward roles where I can scale AI systems that create genuine impact — in legal tech, productivity, or anywhere intelligence can replace friction.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num">3+</span>
+              <span class="stat-label">Projects Shipped</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">🏆</span>
+              <span class="stat-label">Hackathon Winner</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">IIT</span>
+              <span class="stat-label">Bombay Techfest</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal">
+          <div class="av-card">
+            <div class="av-header">
+              <span class="av-dot red"></span>
+              <span class="av-dot yellow"></span>
+              <span class="av-dot green"></span>
+              <span class="av-file">profile.py</span>
+            </div>
+            <pre class="av-code"><span class="c-kw">class</span> <span class="c-cls">NithishKumar</span>:
+  name    = <span class="c-str">"Nithish Kumar"</span>
+  role    = <span class="c-str">"AI Engineer"</span>
+  stack   = [
+    <span class="c-str">"Python"</span>, <span class="c-str">"FastAPI"</span>,
+    <span class="c-str">"Flask"</span>, <span class="c-str">"ML"</span>
+  ]
+  goals   = [
+    <span class="c-str">"Build AGI-era products"</span>,
+    <span class="c-str">"Scale AI systems"</span>,
+    <span class="c-str">"Impact millions"</span>
+  ]
+  status  = <span class="c-str">"Open to work 🚀"</span></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SKILLS ═══════════════ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-label reveal">Skills</div>
+      <h2 class="section-heading reveal">Tech I build <span class="accent">with.</span></h2>
+      <div class="skills-grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Frontend</h3>
+          <div class="skill-tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Jinja2</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Backend</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>FastAPI</span><span>Flask</span><span>PostgreSQL</span><span>MySQL</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>AI / ML</h3>
+          <div class="skill-tags">
+            <span>ML Pipelines</span><span>Data Preprocessing</span><span>Feature Engineering</span><span>Model Training</span><span>Agentic AI</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3>Tools & Infra</h3>
+          <div class="skill-tags">
+            <span>Git</span><span>GitHub</span><span>VS Code</span><span>Jupyter</span><span>Java</span><span>Werkzeug</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ACHIEVEMENTS ═══════════════ -->
+  <section id="achievements">
+    <div class="container">
+      <div class="section-label reveal">Achievements</div>
+      <h2 class="section-heading reveal">Milestones that <span class="accent">define me.</span></h2>
+
+      <!-- HERO ACHIEVEMENT — HACKATHON -->
+      <div class="achievement-hero reveal">
+        <div class="ach-glow"></div>
+        <div class="ach-hero-badge">🏆 1st Place</div>
+        <div class="ach-hero-content">
+          <div class="ach-hero-left">
+            <p class="ach-event-name">Epochon Hackathon</p>
+            <h3>LexTrack-AI</h3>
+            <p class="ach-desc">Built a multi-agent Smart Legal AI system from scratch during the hackathon — featuring a Self-Doubt Engine for safety-first AI decisions, a Smart Scribe petition generator, compliance monitoring, and automated hearing scheduling. Judges awarded First Prize for production-grade architecture and real-world applicability.</p>
+            <div class="ach-tags">
+              <span>Multi-Agent AI</span>
+              <span>Legal Tech</span>
+              <span>Safety-First AI</span>
+              <span>FastAPI</span>
+            </div>
+          </div>
+          <div class="ach-hero-right">
+            <div class="trophy-card">
+              <div class="trophy-icon">🏆</div>
+              <div class="trophy-label">First Prize</div>
+              <div class="trophy-event">Epochon 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="achievements-row">
+        <div class="achievement-card reveal">
+          <div class="ach-icon">🎓</div>
+          <div class="ach-info">
+            <h4>IIT Bombay Techfest</h4>
+            <p>AI & ML workshop completion at one of India's most prestigious technical festivals — deepened practical knowledge in modern ML techniques.</p>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="ach-icon">🌐</div>
+          <div class="ach-info">
+            <h4>amFOSS Community</h4>
+            <p>Contributed to open-source projects within the amFOSS developer community — collaborated on real codebases and sharpened collaborative engineering practices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-label reveal">Projects</div>
+      <h2 class="section-heading reveal">Things I've <span class="accent">built.</span></h2>
+      <p class="section-sub reveal">A selection of projects spanning AI systems, backend APIs, and developer tooling. More coming soon.</p>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT CARD 1 — LexTrack-AI -->
+        <div class="project-card featured reveal">
+          <div class="proj-top">
+            <div class="proj-labels">
+              <span class="proj-tag winner">🏆 Hackathon Winner</span>
+              <span class="proj-tag">Legal AI</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="proj-link-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">LexTrack-AI</h3>
+          <p class="proj-desc">An intelligent, safety-first legal assistant with 7 specialized agents — Research, Document Analysis, Procedure Guidance, Compliance Monitoring, Smart Scribe, Self-Doubt Engine, and Hearing Scheduler. Built and won First Prize at Epochon Hackathon.</p>
+          <div class="proj-stack">
+            <span>Python</span><span>FastAPI</span><span>Multi-Agent</span><span>Legal Tech</span>
+          </div>
+        </div>
+
+        <!-- PROJECT CARD 2 — Kitchen Stock AI -->
+        <div class="project-card reveal">
+          <div class="proj-top">
+            <div class="proj-labels">
+              <span class="proj-tag">AI System</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://github.com/nithishkumar-dev-10/kitchenstock-ai.git" target="_blank" rel="noopener" class="proj-link-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">Kitchen Stock AI</h3>
+          <p class="proj-desc">Smart kitchen inventory & grocery planning system. Tracks ingredients, estimates consumption via behavior-based learning, generates predictive grocery recommendations, and supports shared household access.</p>
+          <div class="proj-stack">
+            <span>Python</span><span>ML</span><span>FastAPI</span><span>Automation</span>
+          </div>
+        </div>
+
+        <!-- PROJECT CARD 3 — DistillCode -->
+        <div class="project-card reveal">
+          <div class="proj-top">
+            <div class="proj-labels">
+              <span class="proj-tag">Developer Tool</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="proj-link-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">DistillCode</h3>
+          <p class="proj-desc">Distill any GitHub repo into an AI-ready ZIP + PDF summary. Handles repos of any size — strips datasets, removes DB binaries, exports schemas, and generates a Claude-powered structured project analysis.</p>
+          <div class="proj-stack">
+            <span>FastAPI</span><span>Python</span><span>Claude API</span><span>GitPython</span>
+          </div>
+        </div>
+
+        <!-- PROJECT CARD 4 — Flask TrackIt -->
+        <div class="project-card reveal">
+          <div class="proj-top">
+            <div class="proj-labels">
+              <span class="proj-tag">Web App</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://github.com/nithishkumar-dev-10/trackit-finance-tracker.git" target="_blank" rel="noopener" class="proj-link-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">Flask TrackIt</h3>
+          <p class="proj-desc">Modular, database-driven personal finance tracker. Secure session-based auth, income/expense management, monthly summaries, and Flask Blueprint architecture. Render-deployment ready.</p>
+          <div class="proj-stack">
+            <span>Python</span><span>Flask</span><span>PostgreSQL</span><span>Werkzeug</span>
+          </div>
+        </div>
+
+        <!-- PLACEHOLDER CARD 1 -->
+        <div class="project-card placeholder reveal">
+          <div class="placeholder-inner">
+            <div class="plus-icon">+</div>
+            <p>Next Project</p>
+            <span>Coming soon</span>
+          </div>
+        </div>
+
+        <!-- PLACEHOLDER CARD 2 -->
+        <div class="project-card placeholder reveal">
+          <div class="placeholder-inner">
+            <div class="plus-icon">+</div>
+            <p>Next Project</p>
+            <span>Coming soon</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label reveal">Contact</div>
+      <h2 class="section-heading reveal">Let's build something <span class="accent">great.</span></h2>
+      <p class="section-sub reveal">Open to AI/ML engineering roles, internships, and exciting collaborations. I respond fast.</p>
+
+      <div class="contact-grid">
+        <div class="contact-links reveal">
+          <a href="mailto:nithishkumarsaravanan33@gmail.com" class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">Email</p>
+              <p class="contact-card-value">nithishkumarsaravanan33@gmail.com</p>
+            </div>
+            <span class="contact-arrow">→</span>
+          </a>
+          <a href="https://www.linkedin.com/in/nithish-kumar-saravanan10/" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">LinkedIn</p>
+              <p class="contact-card-value">nithish-kumar-saravanan10</p>
+            </div>
+            <span class="contact-arrow">→</span>
+          </a>
+          <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">GitHub</p>
+              <p class="contact-card-value">nithishkumar-dev-10</p>
+            </div>
+            <span class="contact-arrow">→</span>
+          </a>
+        </div>
+
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="Jane Smith" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="jane@company.com" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" placeholder="Tell me about the opportunity..."></textarea>
+            </div>
+            <button type="button" class="btn btn-primary form-submit" onclick="handleFormSubmit()">Send Message →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">NK<span class="dot">.</span></span>
+        <p>Built from scratch. Powered by craft.</p>
+        <span>© 2025 Nithish Kumar</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
