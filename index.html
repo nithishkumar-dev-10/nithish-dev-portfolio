@@ -6,10 +6,22 @@
   <title>Nithish Kumar — AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Clash+Display:wght@400;500;600;700&family=Neue+Montreal:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Fonts load async — never blocks rendering -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%2307090d'/><text x='16' y='21' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='12' fill='%234fffb0'>NK</text></svg>">
+  <style>
+    /* Critical: loader shown immediately, dismissed by JS */
+    #loader{position:fixed;inset:0;background:#07090d;display:flex;align-items:center;justify-content:center;z-index:10000;transition:opacity .6s ease,visibility .6s}
+    #loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .loader-inner{text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+    .loader-logo{width:80px;height:80px}
+    .loader-ring{animation:ringFill 1.2s ease forwards;transform-origin:center;transform:rotate(-90deg)}
+    @keyframes ringFill{to{stroke-dashoffset:0}}
+    .loader-text{font-family:monospace;font-size:.75rem;color:rgba(238,242,247,.3);letter-spacing:.15em;text-transform:uppercase}
+    .loader-dots{color:#4fffb0}
+  </style>
 </head>
 <body>
 
@@ -44,7 +56,7 @@
       <li><a href="#projects"     class="nav-link">Projects</a></li>
       <li><a href="#contact"      class="nav-link">Contact</a></li>
     </ul>
-    <a href="mailto:nithishkumarsaravanan33@gmail.com" class="nav-cta">
+    <a href="https://mail.google.com/mail/?view=cm&to=nithishkumar.dev10@gmail.com" target="_blank" rel="noopener" class="nav-cta">
       <span>Hire Me</span>
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
     </a>
@@ -65,7 +77,7 @@
       <li><a href="#projects"     class="mob-link"><span>04</span>Projects</a></li>
       <li><a href="#contact"      class="mob-link"><span>05</span>Contact</a></li>
     </ul>
-    <a href="mailto:nithishkumarsaravanan33@gmail.com" class="mob-cta">Get in touch →</a>
+    <a href="https://mail.google.com/mail/?view=cm&to=nithishkumar.dev10@gmail.com" target="_blank" rel="noopener" class="mob-cta">Get in touch →</a>
   </div>
 
   <!-- ══════════════ HERO ══════════════ -->
@@ -343,28 +355,62 @@
       <!-- HERO ACHIEVEMENT -->
       <div class="ach-hero reveal-up">
         <div class="ach-hero-glow"></div>
+        <div class="ach-hero-particles">
+          <span class="ach-particle"></span>
+          <span class="ach-particle"></span>
+          <span class="ach-particle"></span>
+        </div>
         <div class="ach-ribbon">
-          <span>🏆</span> 1st Place — Epochon Hackathon 2025
+          <span class="ribbon-icon">🏆</span>
+          <span>1st Place — Epochon Hackathon 2025</span>
+          <span class="ribbon-live mono">WINNER</span>
         </div>
         <div class="ach-hero-body">
           <div class="ach-left">
             <p class="ach-event mono">EPOCHON · 2025</p>
             <h3>LexTrack-AI</h3>
             <p class="ach-desc">Built a multi-agent Smart Legal AI system from scratch during the hackathon — featuring a Self-Doubt Engine for safety-first AI decisions, a Smart Scribe petition generator, compliance monitoring, and automated hearing scheduling. Judges awarded First Prize for production-grade architecture and real-world applicability.</p>
+            <div class="ach-meta-row">
+              <div class="ach-meta-item">
+                <span class="ach-meta-val mono">7</span>
+                <span class="ach-meta-label">AI Agents</span>
+              </div>
+              <div class="ach-meta-divider"></div>
+              <div class="ach-meta-item">
+                <span class="ach-meta-val mono">24h</span>
+                <span class="ach-meta-label">Built in</span>
+              </div>
+              <div class="ach-meta-divider"></div>
+              <div class="ach-meta-item">
+                <span class="ach-meta-val mono">1st</span>
+                <span class="ach-meta-label">Place</span>
+              </div>
+            </div>
             <div class="ach-pills">
               <span>Multi-Agent AI</span>
               <span>Legal Tech</span>
               <span>Safety-First AI</span>
               <span>FastAPI</span>
+              <span>Python</span>
             </div>
+            <a href="https://github.com/nithishkumar-dev-10/lextrack-ai" target="_blank" rel="noopener" class="ach-gh-link">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              <span class="mono">View on GitHub</span>
+              <span class="ach-gh-arrow">↗</span>
+            </a>
           </div>
           <div class="ach-right">
             <div class="trophy-display">
-              <div class="trophy-ring">
-                <div class="trophy-inner">
-                  <span class="trophy-emoji">🏆</span>
-                  <span class="trophy-rank">1st</span>
+              <div class="trophy-orbit">
+                <div class="trophy-ring">
+                  <div class="trophy-inner">
+                    <span class="trophy-emoji">🏆</span>
+                    <span class="trophy-rank">1st</span>
+                  </div>
                 </div>
+                <div class="orbit-dot od1"></div>
+                <div class="orbit-dot od2"></div>
+                <div class="orbit-dot od3"></div>
               </div>
               <p class="trophy-name mono">First Prize</p>
               <p class="trophy-event mono dim">Epochon 2025</p>
@@ -376,20 +422,36 @@
       <!-- SECONDARY ACHIEVEMENTS -->
       <div class="ach-row">
         <div class="ach-card reveal-up" style="--delay:0.1s">
-          <div class="ach-card-icon">🎓</div>
+          <div class="ach-card-top">
+            <div class="ach-card-icon-wrap">
+              <span class="ach-card-icon">🎓</span>
+            </div>
+            <div class="ach-card-tag mono">Certified</div>
+          </div>
           <div class="ach-card-body">
             <h4>IIT Bombay Techfest</h4>
-            <p>AI & ML workshop completion at one of India's most prestigious technical festivals — deepened practical knowledge in modern ML techniques.</p>
+            <p>AI & ML workshop completion at one of India's most prestigious technical festivals — deepened practical knowledge in modern ML techniques and hands-on engineering.</p>
           </div>
-          <div class="ach-card-tag mono">Certified</div>
+          <div class="ach-card-footer">
+            <span class="ach-card-year mono dim">2025</span>
+            <div class="ach-card-bar"><div class="ach-card-fill" style="width:90%"></div></div>
+          </div>
         </div>
         <div class="ach-card reveal-up" style="--delay:0.2s">
-          <div class="ach-card-icon">🌐</div>
+          <div class="ach-card-top">
+            <div class="ach-card-icon-wrap">
+              <span class="ach-card-icon">🌐</span>
+            </div>
+            <div class="ach-card-tag mono">Open Source</div>
+          </div>
           <div class="ach-card-body">
             <h4>amFOSS Community</h4>
-            <p>Contributed to open-source projects within the amFOSS developer community — collaborated on real codebases and sharpened collaborative engineering practices.</p>
+            <p>Contributed to open-source projects within the amFOSS developer community — collaborated on real codebases and sharpened collaborative engineering practices at scale.</p>
           </div>
-          <div class="ach-card-tag mono">Open Source</div>
+          <div class="ach-card-footer">
+            <span class="ach-card-year mono dim">Ongoing</span>
+            <div class="ach-card-bar"><div class="ach-card-fill" style="width:70%"></div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -408,45 +470,63 @@
 
       <div class="projects-grid">
 
-        <!-- FEATURED -->
+        <!-- FEATURED: LexTrack-AI -->
         <div class="proj-card featured reveal-up">
           <div class="proj-glow"></div>
+          <div class="proj-featured-bg"></div>
           <div class="proj-top">
             <div class="proj-badges">
               <span class="pbadge gold">🏆 Hackathon Winner</span>
               <span class="pbadge">Legal AI</span>
+              <span class="pbadge">Multi-Agent</span>
             </div>
-            <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="proj-gh-btn" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            <a href="https://github.com/nithishkumar-dev-10/lextrack-ai" target="_blank" rel="noopener" class="proj-gh-btn-pro" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              <span class="mono">View on GitHub</span>
+              <span>↗</span>
             </a>
           </div>
-          <h3>LexTrack-AI</h3>
-          <p>An intelligent, safety-first legal assistant with 7 specialized agents — Research, Document Analysis, Procedure Guidance, Compliance Monitoring, Smart Scribe, Self-Doubt Engine, and Hearing Scheduler. Built and won First Prize at Epochon Hackathon.</p>
-          <!-- Mini arch diagram -->
-          <div class="proj-arch">
-            <div class="pa-node pa-center">Orchestrator</div>
-            <div class="pa-agents">
-              <span>Research</span>
-              <span>Smart Scribe</span>
-              <span>Self-Doubt</span>
-              <span>Compliance</span>
-              <span>Scheduler</span>
-              <span>Doc Analysis</span>
+          <div class="proj-featured-content">
+            <div class="proj-featured-left">
+              <h3>LexTrack-AI</h3>
+              <p>An intelligent, safety-first legal assistant with 7 specialized agents — Research, Document Analysis, Procedure Guidance, Compliance Monitoring, Smart Scribe, Self-Doubt Engine, and Hearing Scheduler. Built and won First Prize at Epochon Hackathon.</p>
+              <div class="proj-stats-row">
+                <div class="proj-stat"><span class="proj-stat-val">7</span><span class="proj-stat-lbl mono">Agents</span></div>
+                <div class="proj-stat"><span class="proj-stat-val">1st</span><span class="proj-stat-lbl mono">Prize</span></div>
+                <div class="proj-stat"><span class="proj-stat-val">24h</span><span class="proj-stat-lbl mono">Built in</span></div>
+              </div>
+              <div class="proj-stack">
+                <span>Python</span><span>FastAPI</span><span>Multi-Agent</span><span>Legal Tech</span><span>LLM</span>
+              </div>
             </div>
-          </div>
-          <div class="proj-stack">
-            <span>Python</span><span>FastAPI</span><span>Multi-Agent</span><span>Legal Tech</span>
+            <div class="proj-featured-right">
+              <div class="proj-arch">
+                <div class="pa-node pa-center">⚡ Orchestrator</div>
+                <div class="pa-connector-line"></div>
+                <div class="pa-agents">
+                  <span>Research</span>
+                  <span>Smart Scribe</span>
+                  <span>Self-Doubt</span>
+                  <span>Compliance</span>
+                  <span>Scheduler</span>
+                  <span>Doc Analysis</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- CARD 2 -->
+        <!-- CARD 2: Kitchen Stock AI -->
         <div class="proj-card reveal-up" style="--delay:0.1s">
           <div class="proj-top">
-            <div class="proj-badges"><span class="pbadge">AI System</span></div>
-            <a href="https://github.com/nithishkumar-dev-10/kitchenstock-ai.git" target="_blank" rel="noopener" class="proj-gh-btn" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            <div class="proj-badges"><span class="pbadge ai-badge">🤖 AI System</span></div>
+            <a href="https://github.com/nithishkumar-dev-10/kitchenstock-ai" target="_blank" rel="noopener" class="proj-gh-btn-pro" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              <span class="mono">GitHub</span>
+              <span>↗</span>
             </a>
           </div>
+          <div class="proj-number mono dim">02</div>
           <h3>Kitchen Stock AI</h3>
           <p>Smart kitchen inventory & grocery planning system. Tracks ingredients, estimates consumption via behavior-based learning, generates predictive grocery recommendations, and supports shared household access.</p>
           <div class="proj-stack">
@@ -454,14 +534,17 @@
           </div>
         </div>
 
-        <!-- CARD 3 -->
+        <!-- CARD 3: DistillCode -->
         <div class="proj-card reveal-up" style="--delay:0.2s">
           <div class="proj-top">
-            <div class="proj-badges"><span class="pbadge">Developer Tool</span></div>
-            <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="proj-gh-btn" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            <div class="proj-badges"><span class="pbadge dev-badge">⚙ Dev Tool</span></div>
+            <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="proj-gh-btn-pro" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              <span class="mono">GitHub</span>
+              <span>↗</span>
             </a>
           </div>
+          <div class="proj-number mono dim">03</div>
           <h3>DistillCode</h3>
           <p>Distill any GitHub repo into an AI-ready ZIP + PDF summary. Handles repos of any size — strips datasets, removes DB binaries, exports schemas, and generates a Claude-powered structured project analysis.</p>
           <div class="proj-stack">
@@ -469,14 +552,17 @@
           </div>
         </div>
 
-        <!-- CARD 4 -->
+        <!-- CARD 4: Flask TrackIt -->
         <div class="proj-card reveal-up" style="--delay:0.3s">
           <div class="proj-top">
-            <div class="proj-badges"><span class="pbadge">Web App</span></div>
-            <a href="https://github.com/nithishkumar-dev-10/trackit-finance-tracker.git" target="_blank" rel="noopener" class="proj-gh-btn" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            <div class="proj-badges"><span class="pbadge web-badge">🌐 Web App</span></div>
+            <a href="https://github.com/nithishkumar-dev-10/trackit-finance-tracker" target="_blank" rel="noopener" class="proj-gh-btn-pro" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              <span class="mono">GitHub</span>
+              <span>↗</span>
             </a>
           </div>
+          <div class="proj-number mono dim">04</div>
           <h3>Flask TrackIt</h3>
           <p>Modular, database-driven personal finance tracker. Secure session-based auth, income/expense management, monthly summaries, and Flask Blueprint architecture. Render-deployment ready.</p>
           <div class="proj-stack">
@@ -502,13 +588,13 @@
           <p class="section-sub">Open to AI/ML engineering roles, internships, and exciting collaborations. I respond fast.</p>
 
           <div class="contact-links">
-            <a href="mailto:nithishkumarsaravanan33@gmail.com" class="cl-item">
+            <a href="https://mail.google.com/mail/?view=cm&to=nithishkumar.dev10@gmail.com" target="_blank" rel="noopener" class="cl-item">
               <div class="cl-icon">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
               </div>
               <div class="cl-info">
                 <p class="cl-label mono">Email</p>
-                <p class="cl-val">nithishkumarsaravanan33@gmail.com</p>
+                <p class="cl-val">nithishkumar.dev10@gmail.com</p>
               </div>
               <span class="cl-arrow">↗</span>
             </a>
@@ -561,15 +647,24 @@
     </div>
   </section>
 
+
   <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-inner">
         <div class="footer-left">
           <span class="footer-logo">NK<span class="accent">.</span></span>
-          <span class="mono dim footer-tagline">Built from scratch. Powered by craft.</span>
+          <p class="mono dim" style="font-size:0.72rem;margin-top:0.4rem;">Built with precision &amp; purpose.</p>
         </div>
-        <p class="mono dim">© 2025 Nithish Kumar</p>
+        <div class="footer-links">
+          <a href="#about" class="mono">About</a>
+          <a href="#skills" class="mono">Skills</a>
+          <a href="#projects" class="mono">Projects</a>
+          <a href="#contact" class="mono">Contact</a>
+        </div>
+        <div class="footer-right mono dim" style="font-size:0.72rem;">
+          &copy; 2025 Nithish Kumar
+        </div>
       </div>
     </div>
   </footer>

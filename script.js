@@ -3,15 +3,21 @@
 ═══════════════════════════════════════════ */
 
 /* ── LOADER ── */
-window.addEventListener('load', () => {
+let loaderDismissed = false;
+function dismissLoader() {
+  if (loaderDismissed) return;
+  loaderDismissed = true;
+  const loader = document.getElementById('loader');
+  if (loader) loader.classList.add('hidden');
   setTimeout(() => {
-    document.getElementById('loader').classList.add('hidden');
-    setTimeout(() => {
-      initReveal();
-      startTyped();
-    }, 300);
-  }, 1500);
-});
+    try { initReveal(); } catch(e) {}
+    try { startTyped(); } catch(e) {}
+  }, 300);
+}
+// Instant fallback — fires as soon as script runs (after DOM is parsed)
+setTimeout(dismissLoader, 1200);
+// Belt-and-suspenders: also on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => setTimeout(dismissLoader, 800));
 
 /* ── CANVAS PARTICLE NETWORK ── */
 (function initCanvas() {
@@ -255,7 +261,7 @@ function showToast(msg, type = 'success') {
 }
 
 /* ── ARCH NODE PULSE ON LOAD ── */
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     document.querySelectorAll('.arch-micro-node').forEach((node, i) => {
       setTimeout(() => {
