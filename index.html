@@ -6,190 +6,323 @@
   <title>Nithish Kumar — AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Clash+Display:wght@400;500;600;700&family=Neue+Montreal:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
 
   <!-- LOADER -->
   <div id="loader">
     <div class="loader-inner">
-      <span class="loader-name">NK</span>
-      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <svg class="loader-logo" viewBox="0 0 80 80" fill="none">
+        <circle cx="40" cy="40" r="36" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <circle cx="40" cy="40" r="36" stroke="var(--accent)" stroke-width="1" stroke-dasharray="226" stroke-dashoffset="226" class="loader-ring"/>
+        <text x="40" y="47" text-anchor="middle" font-family="Syne" font-weight="800" font-size="20" fill="white">NK</text>
+      </svg>
+      <p class="loader-text">Initializing<span class="loader-dots">...</span></p>
     </div>
   </div>
 
   <!-- CURSOR -->
   <div id="cursor"></div>
-  <div id="cursor-follower"></div>
+  <div id="cursor-follower"><div class="follower-dot"></div></div>
 
   <!-- NAVBAR -->
   <nav id="navbar">
-    <div class="nav-logo">NK<span class="dot">.</span></div>
+    <a href="#hero" class="nav-logo">
+      <svg viewBox="0 0 32 32" fill="none" class="logo-svg">
+        <circle cx="16" cy="16" r="15" stroke="var(--accent)" stroke-width="1.2"/>
+        <text x="16" y="21" text-anchor="middle" font-family="Syne" font-weight="800" font-size="11" fill="white">NK</text>
+      </svg>
+    </a>
     <ul class="nav-links">
-      <li><a href="#hero" class="nav-link active">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#about"        class="nav-link">About</a></li>
+      <li><a href="#skills"       class="nav-link">Skills</a></li>
       <li><a href="#achievements" class="nav-link">Achievements</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="#projects"     class="nav-link">Projects</a></li>
+      <li><a href="#contact"      class="nav-link">Contact</a></li>
     </ul>
-    <a href="mailto:nithishkumarsaravanan33@gmail.com" class="nav-cta">Hire Me</a>
+    <a href="mailto:nithishkumarsaravanan33@gmail.com" class="nav-cta">
+      <span>Hire Me</span>
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
+      <span></span><span></span>
     </button>
   </nav>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
+    <button class="mob-close" id="mob-close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
     <ul>
-      <li><a href="#hero" class="mob-link">Home</a></li>
-      <li><a href="#about" class="mob-link">About</a></li>
-      <li><a href="#skills" class="mob-link">Skills</a></li>
-      <li><a href="#achievements" class="mob-link">Achievements</a></li>
-      <li><a href="#projects" class="mob-link">Projects</a></li>
-      <li><a href="#contact" class="mob-link">Contact</a></li>
+      <li><a href="#about"        class="mob-link"><span>01</span>About</a></li>
+      <li><a href="#skills"       class="mob-link"><span>02</span>Skills</a></li>
+      <li><a href="#achievements" class="mob-link"><span>03</span>Achievements</a></li>
+      <li><a href="#projects"     class="mob-link"><span>04</span>Projects</a></li>
+      <li><a href="#contact"      class="mob-link"><span>05</span>Contact</a></li>
     </ul>
+    <a href="mailto:nithishkumarsaravanan33@gmail.com" class="mob-cta">Get in touch →</a>
   </div>
 
-  <!-- ═══════════════ HERO ═══════════════ -->
+  <!-- ══════════════ HERO ══════════════ -->
   <section id="hero">
-    <div class="hero-bg-grid"></div>
-    <div class="hero-orb orb-1"></div>
-    <div class="hero-orb orb-2"></div>
+    <div class="hero-noise"></div>
+    <canvas id="hero-canvas"></canvas>
 
-    <div class="hero-content reveal">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Available for opportunities
+    <div class="hero-left">
+      <div class="hero-index">
+        <span class="mono dim">0001</span>
+        <div class="hero-line"></div>
       </div>
-      <h1 class="hero-name">Nithish<br><span class="accent">Kumar.</span></h1>
-      <p class="hero-title">
-        <span class="typed-wrap"><span id="typed"></span><span class="cursor-blink">|</span></span>
-      </p>
-      <p class="hero-tagline">
-        Building intelligent systems at the intersection of AI, backend engineering, and real-world impact.
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">View Work</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
-      </div>
-      <div class="hero-socials">
-        <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="social-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/nithish-kumar-saravanan10/" target="_blank" rel="noopener" class="social-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-        </a>
-        <a href="mailto:nithishkumarsaravanan33@gmail.com" class="social-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </a>
+      <div class="hero-content reveal-up">
+        <div class="hero-badge">
+          <span class="badge-pulse"></span>
+          <span class="mono">Available for opportunities</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="name-line">Nithish</span>
+          <span class="name-line accent-line">Kumar<span class="accent-dot">.</span></span>
+        </h1>
+        <div class="hero-role">
+          <span class="mono dim">role://</span>
+          <span id="typed" class="typed-text"></span><span class="cursor-blink">_</span>
+        </div>
+        <p class="hero-tagline">Building intelligent systems at the intersection of AI, backend engineering, and real-world impact.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary-pill">
+            View Work
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#contact" class="btn-ghost-pill">Contact Me</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="social-pill" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/nithish-kumar-saravanan10/" target="_blank" rel="noopener" class="social-pill" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+    <div class="hero-right reveal-up" style="--delay:0.2s">
+      <div class="terminal-window">
+        <div class="term-bar">
+          <div class="term-dots">
+            <span class="td red"></span>
+            <span class="td yellow"></span>
+            <span class="td green"></span>
+          </div>
+          <span class="term-title mono">~/nithish/profile.py</span>
+          <div class="term-controls">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" width="14" height="14"><rect x="2" y="2" width="12" height="12" rx="2"/></svg>
+          </div>
+        </div>
+        <div class="term-body">
+          <div class="line-nums" aria-hidden="true">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+            <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+            <span>16</span><span>17</span>
+          </div>
+          <pre class="term-code"><span class="t-kw">class</span> <span class="t-cls">NithishKumar</span><span class="t-punc">:</span>
+  name    <span class="t-op">=</span> <span class="t-str">"Nithish Kumar"</span>
+  role    <span class="t-op">=</span> <span class="t-str">"AI Engineer"</span>
+  stack   <span class="t-op">=</span> <span class="t-punc">[</span>
+    <span class="t-str">"Python"</span><span class="t-punc">,</span> <span class="t-str">"FastAPI"</span><span class="t-punc">,</span>
+    <span class="t-str">"Flask"</span><span class="t-punc">,</span>   <span class="t-str">"ML"</span>
+  <span class="t-punc">]</span>
+  goals   <span class="t-op">=</span> <span class="t-punc">[</span>
+    <span class="t-str">"Build AGI-era products"</span><span class="t-punc">,</span>
+    <span class="t-str">"Scale AI systems"</span><span class="t-punc">,</span>
+    <span class="t-str">"Impact millions"</span>
+  <span class="t-punc">]</span>
+  status  <span class="t-op">=</span> <span class="t-str">"Open to work 🚀"</span>
+
+  <span class="t-kw">def</span> <span class="t-fn">__init__</span><span class="t-punc">(</span>self<span class="t-punc">):</span>
+    self<span class="t-op">.</span>exploring <span class="t-op">=</span> <span class="t-punc">[</span>
+      <span class="t-str">"RAG pipelines"</span><span class="t-punc">,</span> <span class="t-str">"MCP agents"</span>
+    <span class="t-punc">]</span></pre>
+        </div>
+        <div class="term-footer mono">
+          <span class="t-green">●</span> Python 3.11 &nbsp;·&nbsp; <span class="dim">UTF-8</span>
+        </div>
+      </div>
+      <!-- Floating badges -->
+      <div class="hero-float-badge fb-1 reveal-up" style="--delay:0.5s">
+        <span class="t-gold">🏆</span> Hackathon Winner
+      </div>
+      <div class="hero-float-badge fb-2 reveal-up" style="--delay:0.65s">
+        <span>IIT</span> Bombay Techfest
+      </div>
+    </div>
+
+    <div class="hero-scroll-cue">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span class="mono">scroll</span>
     </div>
   </section>
 
-  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <!-- ══════════════ ABOUT ══════════════ -->
   <section id="about">
     <div class="container">
-      <div class="section-label reveal">About</div>
+      <div class="section-eyebrow reveal-up">
+        <span class="mono accent">// 01</span>
+        <span class="eyebrow-line"></span>
+        <span>About</span>
+      </div>
       <div class="about-grid">
-        <div class="about-text reveal">
-          <h2 class="section-heading">Crafting AI that <span class="accent">matters.</span></h2>
+        <div class="about-text reveal-up">
+          <h2 class="section-heading">Crafting AI that <em>matters.</em></h2>
           <p>I'm Nithish Kumar, a Computer Science student on a focused path toward becoming an AI/ML Engineer. I build systems that sit at the crossroads of intelligent automation and practical software — things that solve real problems, not just demo well.</p>
           <p>My work spans backend APIs, machine learning pipelines, and multi-agent AI systems. I think deeply about architecture, care obsessively about reliability, and ship with the confidence of someone who has won a hackathon with a production-grade system under pressure.</p>
           <p>Right now, I'm pushing toward roles where I can scale AI systems that create genuine impact — in legal tech, productivity, or anywhere intelligence can replace friction.</p>
+
+          <div class="currently-block">
+            <span class="mono accent cb-label">Currently exploring →</span>
+            <div class="cb-items">
+              <span>RAG pipelines</span>
+              <span>MCP agents</span>
+              <span>LLM evaluation</span>
+            </div>
+          </div>
+
           <div class="about-stats">
-            <div class="stat-item">
-              <span class="stat-num">3+</span>
-              <span class="stat-label">Projects Shipped</span>
+            <div class="stat-block reveal-up" style="--delay:0.1s">
+              <div class="stat-value">4+</div>
+              <div class="stat-desc">Projects Shipped</div>
             </div>
-            <div class="stat-item">
-              <span class="stat-num">🏆</span>
-              <span class="stat-label">Hackathon Winner</span>
+            <div class="stat-block reveal-up" style="--delay:0.2s">
+              <div class="stat-value accent">1st</div>
+              <div class="stat-desc">Hackathon Prize</div>
             </div>
-            <div class="stat-item">
-              <span class="stat-num">IIT</span>
-              <span class="stat-label">Bombay Techfest</span>
+            <div class="stat-block reveal-up" style="--delay:0.3s">
+              <div class="stat-value">IIT</div>
+              <div class="stat-desc">Bombay Techfest</div>
             </div>
           </div>
         </div>
-        <div class="about-visual reveal">
-          <div class="av-card">
-            <div class="av-header">
-              <span class="av-dot red"></span>
-              <span class="av-dot yellow"></span>
-              <span class="av-dot green"></span>
-              <span class="av-file">profile.py</span>
+
+        <div class="about-diagram reveal-up" style="--delay:0.3s">
+          <div class="arch-card">
+            <div class="arch-header">
+              <span class="mono dim">system_architecture.svg</span>
             </div>
-            <pre class="av-code"><span class="c-kw">class</span> <span class="c-cls">NithishKumar</span>:
-  name    = <span class="c-str">"Nithish Kumar"</span>
-  role    = <span class="c-str">"AI Engineer"</span>
-  stack   = [
-    <span class="c-str">"Python"</span>, <span class="c-str">"FastAPI"</span>,
-    <span class="c-str">"Flask"</span>, <span class="c-str">"ML"</span>
-  ]
-  goals   = [
-    <span class="c-str">"Build AGI-era products"</span>,
-    <span class="c-str">"Scale AI systems"</span>,
-    <span class="c-str">"Impact millions"</span>
-  ]
-  status  = <span class="c-str">"Open to work 🚀"</span></pre>
+            <div class="arch-body">
+              <!-- Agent flow diagram for LexTrack -->
+              <div class="arch-node top-node">
+                <span class="arch-label mono">User Query</span>
+              </div>
+              <div class="arch-arrow-down"></div>
+              <div class="arch-node center-node accent-node">
+                <span class="arch-icon">⚡</span>
+                <span class="arch-label mono">Orchestrator</span>
+              </div>
+              <div class="arch-branches">
+                <div class="arch-branch">
+                  <div class="arch-micro-node">Research</div>
+                  <div class="arch-micro-node">Smart Scribe</div>
+                  <div class="arch-micro-node">Self-Doubt Engine</div>
+                </div>
+                <div class="arch-branch">
+                  <div class="arch-micro-node">Compliance</div>
+                  <div class="arch-micro-node">Hearing Scheduler</div>
+                  <div class="arch-micro-node">Doc Analysis</div>
+                </div>
+              </div>
+              <div class="arch-footer-label mono dim">LexTrack-AI · 7 Agent System</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════ SKILLS ═══════════════ -->
+  <!-- ══════════════ SKILLS ══════════════ -->
   <section id="skills">
     <div class="container">
-      <div class="section-label reveal">Skills</div>
-      <h2 class="section-heading reveal">Tech I build <span class="accent">with.</span></h2>
+      <div class="section-eyebrow reveal-up">
+        <span class="mono accent">// 02</span>
+        <span class="eyebrow-line"></span>
+        <span>Skills</span>
+      </div>
+      <h2 class="section-heading reveal-up">Tech I build <em>with.</em></h2>
+
       <div class="skills-grid">
 
-        <div class="skill-card reveal">
-          <div class="skill-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h3>Frontend</h3>
-          <div class="skill-tags">
-            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Jinja2</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3>Backend</h3>
-          <div class="skill-tags">
-            <span>Python</span><span>FastAPI</span><span>Flask</span><span>PostgreSQL</span><span>MySQL</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <div class="skill-card sk-ai reveal-up" style="--delay:0s">
+          <div class="sk-glow"></div>
+          <div class="sk-header">
+            <div class="sk-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="sk-priority">Primary</div>
           </div>
           <h3>AI / ML</h3>
-          <div class="skill-tags">
-            <span>ML Pipelines</span><span>Data Preprocessing</span><span>Feature Engineering</span><span>Model Training</span><span>Agentic AI</span>
+          <div class="skill-pills">
+            <span class="pill accent-pill">ML Pipelines</span>
+            <span class="pill accent-pill">Agentic AI</span>
+            <span class="pill">Data Preprocessing</span>
+            <span class="pill">Feature Engineering</span>
+            <span class="pill">Model Training</span>
           </div>
         </div>
 
-        <div class="skill-card reveal">
-          <div class="skill-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        <div class="skill-card sk-backend reveal-up" style="--delay:0.1s">
+          <div class="sk-glow"></div>
+          <div class="sk-header">
+            <div class="sk-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="sk-priority">Primary</div>
+          </div>
+          <h3>Backend</h3>
+          <div class="skill-pills">
+            <span class="pill accent-pill">Python</span>
+            <span class="pill accent-pill">FastAPI</span>
+            <span class="pill">Flask</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.2s">
+          <div class="sk-header">
+            <div class="sk-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
           </div>
           <h3>Tools & Infra</h3>
-          <div class="skill-tags">
-            <span>Git</span><span>GitHub</span><span>VS Code</span><span>Jupyter</span><span>Java</span><span>Werkzeug</span>
+          <div class="skill-pills">
+            <span class="pill">Git</span>
+            <span class="pill">GitHub</span>
+            <span class="pill">VS Code</span>
+            <span class="pill">Jupyter</span>
+            <span class="pill">Werkzeug</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.3s">
+          <div class="sk-header">
+            <div class="sk-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+          </div>
+          <h3>Frontend</h3>
+          <div class="skill-pills">
+            <span class="pill">HTML5</span>
+            <span class="pill">CSS3</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">Jinja2</span>
           </div>
         </div>
 
@@ -197,158 +330,157 @@
     </div>
   </section>
 
-  <!-- ═══════════════ ACHIEVEMENTS ═══════════════ -->
+  <!-- ══════════════ ACHIEVEMENTS ══════════════ -->
   <section id="achievements">
     <div class="container">
-      <div class="section-label reveal">Achievements</div>
-      <h2 class="section-heading reveal">Milestones that <span class="accent">define me.</span></h2>
+      <div class="section-eyebrow reveal-up">
+        <span class="mono accent">// 03</span>
+        <span class="eyebrow-line"></span>
+        <span>Achievements</span>
+      </div>
+      <h2 class="section-heading reveal-up">Milestones that <em>define me.</em></h2>
 
-      <!-- HERO ACHIEVEMENT — HACKATHON -->
-      <div class="achievement-hero reveal">
-        <div class="ach-glow"></div>
-        <div class="ach-hero-badge">🏆 1st Place</div>
-        <div class="ach-hero-content">
-          <div class="ach-hero-left">
-            <p class="ach-event-name">Epochon Hackathon</p>
+      <!-- HERO ACHIEVEMENT -->
+      <div class="ach-hero reveal-up">
+        <div class="ach-hero-glow"></div>
+        <div class="ach-ribbon">
+          <span>🏆</span> 1st Place — Epochon Hackathon 2025
+        </div>
+        <div class="ach-hero-body">
+          <div class="ach-left">
+            <p class="ach-event mono">EPOCHON · 2025</p>
             <h3>LexTrack-AI</h3>
             <p class="ach-desc">Built a multi-agent Smart Legal AI system from scratch during the hackathon — featuring a Self-Doubt Engine for safety-first AI decisions, a Smart Scribe petition generator, compliance monitoring, and automated hearing scheduling. Judges awarded First Prize for production-grade architecture and real-world applicability.</p>
-            <div class="ach-tags">
+            <div class="ach-pills">
               <span>Multi-Agent AI</span>
               <span>Legal Tech</span>
               <span>Safety-First AI</span>
               <span>FastAPI</span>
             </div>
           </div>
-          <div class="ach-hero-right">
-            <div class="trophy-card">
-              <div class="trophy-icon">🏆</div>
-              <div class="trophy-label">First Prize</div>
-              <div class="trophy-event">Epochon 2025</div>
+          <div class="ach-right">
+            <div class="trophy-display">
+              <div class="trophy-ring">
+                <div class="trophy-inner">
+                  <span class="trophy-emoji">🏆</span>
+                  <span class="trophy-rank">1st</span>
+                </div>
+              </div>
+              <p class="trophy-name mono">First Prize</p>
+              <p class="trophy-event mono dim">Epochon 2025</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="achievements-row">
-        <div class="achievement-card reveal">
-          <div class="ach-icon">🎓</div>
-          <div class="ach-info">
+      <!-- SECONDARY ACHIEVEMENTS -->
+      <div class="ach-row">
+        <div class="ach-card reveal-up" style="--delay:0.1s">
+          <div class="ach-card-icon">🎓</div>
+          <div class="ach-card-body">
             <h4>IIT Bombay Techfest</h4>
             <p>AI & ML workshop completion at one of India's most prestigious technical festivals — deepened practical knowledge in modern ML techniques.</p>
           </div>
+          <div class="ach-card-tag mono">Certified</div>
         </div>
-        <div class="achievement-card reveal">
-          <div class="ach-icon">🌐</div>
-          <div class="ach-info">
+        <div class="ach-card reveal-up" style="--delay:0.2s">
+          <div class="ach-card-icon">🌐</div>
+          <div class="ach-card-body">
             <h4>amFOSS Community</h4>
             <p>Contributed to open-source projects within the amFOSS developer community — collaborated on real codebases and sharpened collaborative engineering practices.</p>
           </div>
+          <div class="ach-card-tag mono">Open Source</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <!-- ══════════════ PROJECTS ══════════════ -->
   <section id="projects">
     <div class="container">
-      <div class="section-label reveal">Projects</div>
-      <h2 class="section-heading reveal">Things I've <span class="accent">built.</span></h2>
-      <p class="section-sub reveal">A selection of projects spanning AI systems, backend APIs, and developer tooling. More coming soon.</p>
+      <div class="section-eyebrow reveal-up">
+        <span class="mono accent">// 04</span>
+        <span class="eyebrow-line"></span>
+        <span>Projects</span>
+      </div>
+      <h2 class="section-heading reveal-up">Things I've <em>built.</em></h2>
+      <p class="section-sub reveal-up">AI systems, backend APIs, and developer tooling — engineered for real-world impact.</p>
 
       <div class="projects-grid">
 
-        <!-- PROJECT CARD 1 — LexTrack-AI -->
-        <div class="project-card featured reveal">
+        <!-- FEATURED -->
+        <div class="proj-card featured reveal-up">
+          <div class="proj-glow"></div>
           <div class="proj-top">
-            <div class="proj-labels">
-              <span class="proj-tag winner">🏆 Hackathon Winner</span>
-              <span class="proj-tag">Legal AI</span>
+            <div class="proj-badges">
+              <span class="pbadge gold">🏆 Hackathon Winner</span>
+              <span class="pbadge">Legal AI</span>
             </div>
-            <div class="proj-links">
-              <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="proj-link-btn" title="GitHub">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-              </a>
+            <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="proj-gh-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </a>
+          </div>
+          <h3>LexTrack-AI</h3>
+          <p>An intelligent, safety-first legal assistant with 7 specialized agents — Research, Document Analysis, Procedure Guidance, Compliance Monitoring, Smart Scribe, Self-Doubt Engine, and Hearing Scheduler. Built and won First Prize at Epochon Hackathon.</p>
+          <!-- Mini arch diagram -->
+          <div class="proj-arch">
+            <div class="pa-node pa-center">Orchestrator</div>
+            <div class="pa-agents">
+              <span>Research</span>
+              <span>Smart Scribe</span>
+              <span>Self-Doubt</span>
+              <span>Compliance</span>
+              <span>Scheduler</span>
+              <span>Doc Analysis</span>
             </div>
           </div>
-          <h3 class="proj-title">LexTrack-AI</h3>
-          <p class="proj-desc">An intelligent, safety-first legal assistant with 7 specialized agents — Research, Document Analysis, Procedure Guidance, Compliance Monitoring, Smart Scribe, Self-Doubt Engine, and Hearing Scheduler. Built and won First Prize at Epochon Hackathon.</p>
           <div class="proj-stack">
             <span>Python</span><span>FastAPI</span><span>Multi-Agent</span><span>Legal Tech</span>
           </div>
         </div>
 
-        <!-- PROJECT CARD 2 — Kitchen Stock AI -->
-        <div class="project-card reveal">
+        <!-- CARD 2 -->
+        <div class="proj-card reveal-up" style="--delay:0.1s">
           <div class="proj-top">
-            <div class="proj-labels">
-              <span class="proj-tag">AI System</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://github.com/nithishkumar-dev-10/kitchenstock-ai.git" target="_blank" rel="noopener" class="proj-link-btn" title="GitHub">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-              </a>
-            </div>
+            <div class="proj-badges"><span class="pbadge">AI System</span></div>
+            <a href="https://github.com/nithishkumar-dev-10/kitchenstock-ai.git" target="_blank" rel="noopener" class="proj-gh-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </a>
           </div>
-          <h3 class="proj-title">Kitchen Stock AI</h3>
-          <p class="proj-desc">Smart kitchen inventory & grocery planning system. Tracks ingredients, estimates consumption via behavior-based learning, generates predictive grocery recommendations, and supports shared household access.</p>
+          <h3>Kitchen Stock AI</h3>
+          <p>Smart kitchen inventory & grocery planning system. Tracks ingredients, estimates consumption via behavior-based learning, generates predictive grocery recommendations, and supports shared household access.</p>
           <div class="proj-stack">
             <span>Python</span><span>ML</span><span>FastAPI</span><span>Automation</span>
           </div>
         </div>
 
-        <!-- PROJECT CARD 3 — DistillCode -->
-        <div class="project-card reveal">
+        <!-- CARD 3 -->
+        <div class="proj-card reveal-up" style="--delay:0.2s">
           <div class="proj-top">
-            <div class="proj-labels">
-              <span class="proj-tag">Developer Tool</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="proj-link-btn" title="GitHub">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-              </a>
-            </div>
+            <div class="proj-badges"><span class="pbadge">Developer Tool</span></div>
+            <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="proj-gh-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </a>
           </div>
-          <h3 class="proj-title">DistillCode</h3>
-          <p class="proj-desc">Distill any GitHub repo into an AI-ready ZIP + PDF summary. Handles repos of any size — strips datasets, removes DB binaries, exports schemas, and generates a Claude-powered structured project analysis.</p>
+          <h3>DistillCode</h3>
+          <p>Distill any GitHub repo into an AI-ready ZIP + PDF summary. Handles repos of any size — strips datasets, removes DB binaries, exports schemas, and generates a Claude-powered structured project analysis.</p>
           <div class="proj-stack">
             <span>FastAPI</span><span>Python</span><span>Claude API</span><span>GitPython</span>
           </div>
         </div>
 
-        <!-- PROJECT CARD 4 — Flask TrackIt -->
-        <div class="project-card reveal">
+        <!-- CARD 4 -->
+        <div class="proj-card reveal-up" style="--delay:0.3s">
           <div class="proj-top">
-            <div class="proj-labels">
-              <span class="proj-tag">Web App</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://github.com/nithishkumar-dev-10/trackit-finance-tracker.git" target="_blank" rel="noopener" class="proj-link-btn" title="GitHub">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-              </a>
-            </div>
+            <div class="proj-badges"><span class="pbadge">Web App</span></div>
+            <a href="https://github.com/nithishkumar-dev-10/trackit-finance-tracker.git" target="_blank" rel="noopener" class="proj-gh-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </a>
           </div>
-          <h3 class="proj-title">Flask TrackIt</h3>
-          <p class="proj-desc">Modular, database-driven personal finance tracker. Secure session-based auth, income/expense management, monthly summaries, and Flask Blueprint architecture. Render-deployment ready.</p>
+          <h3>Flask TrackIt</h3>
+          <p>Modular, database-driven personal finance tracker. Secure session-based auth, income/expense management, monthly summaries, and Flask Blueprint architecture. Render-deployment ready.</p>
           <div class="proj-stack">
             <span>Python</span><span>Flask</span><span>PostgreSQL</span><span>Werkzeug</span>
-          </div>
-        </div>
-
-        <!-- PLACEHOLDER CARD 1 -->
-        <div class="project-card placeholder reveal">
-          <div class="placeholder-inner">
-            <div class="plus-icon">+</div>
-            <p>Next Project</p>
-            <span>Coming soon</span>
-          </div>
-        </div>
-
-        <!-- PLACEHOLDER CARD 2 -->
-        <div class="project-card placeholder reveal">
-          <div class="placeholder-inner">
-            <div class="plus-icon">+</div>
-            <p>Next Project</p>
-            <span>Coming soon</span>
           </div>
         </div>
 
@@ -356,62 +488,73 @@
     </div>
   </section>
 
-  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <!-- ══════════════ CONTACT ══════════════ -->
   <section id="contact">
     <div class="container">
-      <div class="section-label reveal">Contact</div>
-      <h2 class="section-heading reveal">Let's build something <span class="accent">great.</span></h2>
-      <p class="section-sub reveal">Open to AI/ML engineering roles, internships, and exciting collaborations. I respond fast.</p>
-
+      <div class="section-eyebrow reveal-up">
+        <span class="mono accent">// 05</span>
+        <span class="eyebrow-line"></span>
+        <span>Contact</span>
+      </div>
       <div class="contact-grid">
-        <div class="contact-links reveal">
-          <a href="mailto:nithishkumarsaravanan33@gmail.com" class="contact-card">
-            <div class="contact-card-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </div>
-            <div>
-              <p class="contact-card-label">Email</p>
-              <p class="contact-card-value">nithishkumarsaravanan33@gmail.com</p>
-            </div>
-            <span class="contact-arrow">→</span>
-          </a>
-          <a href="https://www.linkedin.com/in/nithish-kumar-saravanan10/" target="_blank" rel="noopener" class="contact-card">
-            <div class="contact-card-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-            </div>
-            <div>
-              <p class="contact-card-label">LinkedIn</p>
-              <p class="contact-card-value">nithish-kumar-saravanan10</p>
-            </div>
-            <span class="contact-arrow">→</span>
-          </a>
-          <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="contact-card">
-            <div class="contact-card-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-            </div>
-            <div>
-              <p class="contact-card-label">GitHub</p>
-              <p class="contact-card-value">nithishkumar-dev-10</p>
-            </div>
-            <span class="contact-arrow">→</span>
-          </a>
+        <div class="contact-left reveal-up">
+          <h2 class="section-heading">Let's build something <em>great.</em></h2>
+          <p class="section-sub">Open to AI/ML engineering roles, internships, and exciting collaborations. I respond fast.</p>
+
+          <div class="contact-links">
+            <a href="mailto:nithishkumarsaravanan33@gmail.com" class="cl-item">
+              <div class="cl-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div class="cl-info">
+                <p class="cl-label mono">Email</p>
+                <p class="cl-val">nithishkumarsaravanan33@gmail.com</p>
+              </div>
+              <span class="cl-arrow">↗</span>
+            </a>
+            <a href="https://www.linkedin.com/in/nithish-kumar-saravanan10/" target="_blank" rel="noopener" class="cl-item">
+              <div class="cl-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              </div>
+              <div class="cl-info">
+                <p class="cl-label mono">LinkedIn</p>
+                <p class="cl-val">nithish-kumar-saravanan10</p>
+              </div>
+              <span class="cl-arrow">↗</span>
+            </a>
+            <a href="https://github.com/nithishkumar-dev-10" target="_blank" rel="noopener" class="cl-item">
+              <div class="cl-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              </div>
+              <div class="cl-info">
+                <p class="cl-label mono">GitHub</p>
+                <p class="cl-val">nithishkumar-dev-10</p>
+              </div>
+              <span class="cl-arrow">↗</span>
+            </a>
+          </div>
         </div>
 
-        <div class="contact-form-wrap reveal">
-          <form class="contact-form" id="contact-form">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" placeholder="Jane Smith" />
+        <div class="contact-form-wrap reveal-up" style="--delay:0.2s">
+          <form class="contact-form" id="contact-form" autocomplete="off">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="mono" for="name">Name</label>
+                <input type="text" id="name" placeholder="Jane Smith" />
+              </div>
+              <div class="form-field">
+                <label class="mono" for="email">Email</label>
+                <input type="email" id="email" placeholder="jane@company.com" />
+              </div>
             </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" placeholder="jane@company.com" />
+            <div class="form-field">
+              <label class="mono" for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Tell me about the opportunity..."></textarea>
             </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" rows="4" placeholder="Tell me about the opportunity..."></textarea>
-            </div>
-            <button type="button" class="btn btn-primary form-submit" onclick="handleFormSubmit()">Send Message →</button>
+            <button type="button" class="form-submit-btn" onclick="handleFormSubmit()">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+            </button>
           </form>
         </div>
       </div>
@@ -422,9 +565,11 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-logo">NK<span class="dot">.</span></span>
-        <p>Built from scratch. Powered by craft.</p>
-        <span>© 2025 Nithish Kumar</span>
+        <div class="footer-left">
+          <span class="footer-logo">NK<span class="accent">.</span></span>
+          <span class="mono dim footer-tagline">Built from scratch. Powered by craft.</span>
+        </div>
+        <p class="mono dim">© 2025 Nithish Kumar</p>
       </div>
     </div>
   </footer>
