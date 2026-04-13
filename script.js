@@ -228,7 +228,8 @@ function handleFormSubmit() {
 
   const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
   const body    = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-  window.open(`mailto:nithishkumarsaravanan33@gmail.com?subject=${subject}&body=${body}`, '_blank');
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&to=nithishkumar.dev10@gmail.com&su=${subject}&body=${body}`;
+  window.open(gmailUrl, '_blank');
   document.getElementById('contact-form').reset();
   showToast('Opening your email client ✓', 'success');
 }
