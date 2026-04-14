@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%2307090d'/><text x='16' y='21' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='12' fill='%234fffb0'>NK</text></svg>">
   <style>
+    /* Critical: --accent must be defined here so loader ring renders before style.css loads */
+    :root{--accent:#4fffb0}
     /* Critical: loader shown immediately, dismissed by JS */
     #loader{position:fixed;inset:0;background:#07090d;display:flex;align-items:center;justify-content:center;z-index:10000;transition:opacity .6s ease,visibility .6s}
     #loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
@@ -54,6 +56,7 @@
       <li><a href="#skills"       class="nav-link">Skills</a></li>
       <li><a href="#achievements" class="nav-link">Achievements</a></li>
       <li><a href="#projects"     class="nav-link">Projects</a></li>
+      <li><a href="#opensource"   class="nav-link">Open Source</a></li>
       <li><a href="#contact"      class="nav-link">Contact</a></li>
     </ul>
     <a href="https://mail.google.com/mail/?view=cm&to=nithishkumar.dev10@gmail.com" target="_blank" rel="noopener" class="nav-cta">
@@ -75,7 +78,8 @@
       <li><a href="#skills"       class="mob-link"><span>02</span>Skills</a></li>
       <li><a href="#achievements" class="mob-link"><span>03</span>Achievements</a></li>
       <li><a href="#projects"     class="mob-link"><span>04</span>Projects</a></li>
-      <li><a href="#contact"      class="mob-link"><span>05</span>Contact</a></li>
+      <li><a href="#opensource"   class="mob-link"><span>05</span>Open Source</a></li>
+      <li><a href="#contact"      class="mob-link"><span>06</span>Contact</a></li>
     </ul>
     <a href="https://mail.google.com/mail/?view=cm&to=nithishkumar.dev10@gmail.com" target="_blank" rel="noopener" class="mob-cta">Get in touch →</a>
   </div>
@@ -446,7 +450,7 @@
           </div>
           <div class="ach-card-body">
             <h4>amFOSS Community</h4>
-            <p>Contributed to open-source projects within the amFOSS developer community — collaborated on real codebases and sharpened collaborative engineering practices at scale.</p>
+            <p>Learned open-source contribution through the amFOSS developer community — made real PR contributions to active codebases, went through maintainer code review, and shipped merged commits.</p>
           </div>
           <div class="ach-card-footer">
             <span class="ach-card-year mono dim">Ongoing</span>
@@ -574,11 +578,96 @@
     </div>
   </section>
 
+  <!-- ══════════════ OPEN SOURCE ══════════════ -->
+  <section id="opensource">
+    <div class="container">
+      <div class="section-eyebrow reveal-up">
+        <span class="mono accent">// 05</span>
+        <span class="eyebrow-line"></span>
+        <span>Open Source</span>
+      </div>
+      <h2 class="section-heading reveal-up">Code I've shipped <em>publicly.</em></h2>
+      <p class="section-sub reveal-up">Real PRs. Real review cycles. Real merges — learned through the amFOSS community.</p>
+
+      <div class="os-cards-grid">
+
+        <!-- Card 1: memtomem-stm -->
+        <div class="os-card reveal-up" style="--delay:0.0s">
+          <div class="os-card-top">
+            <span class="os-repo-label mono">memtomem / memtomem-stm</span>
+            <span class="os-badge-merged">
+              <span class="os-badge-dot"></span>Merged · PR #39
+            </span>
+          </div>
+          <h3 class="os-card-title">CircuitBreaker — Test Coverage</h3>
+          <p class="os-card-repo mono">
+            <a href="https://github.com/memtomem/memtomem-stm/pull/39" target="_blank" rel="noopener">github.com/memtomem/memtomem-stm</a>
+          </p>
+          <p class="os-card-desc">
+            Authored tests for <code>time_until_reset</code>, backward-compat aliases
+            (<code>success / failure</code>), and the half-open probe boundary case
+            in <code>circuit_breaker.py</code>. Filled coverage gaps flagged as
+            <em>help wanted</em> by the maintainer — including monotonic timing mocks and off-by-one edge cases.
+          </p>
+          <div class="os-tag-row">
+            <span class="os-tag">Python</span>
+            <span class="os-tag">unittest</span>
+            <span class="os-tag">mock.patch</span>
+            <span class="os-tag">State Machine</span>
+            <span class="os-tag">Test Coverage</span>
+          </div>
+          <div class="os-card-footer">
+            <span class="os-meta mono">Issue #28 → PR #39 · Apr 2026</span>
+            <a href="https://github.com/memtomem/memtomem-stm/pull/39" target="_blank" rel="noopener" class="os-pr-link mono">View PR ↗</a>
+          </div>
+        </div>
+
+        <!-- Card 2: TheGittyPerson/ThePerson -->
+        <div class="os-card reveal-up" style="--delay:0.15s">
+          <div class="os-card-top">
+            <span class="os-repo-label mono">TheGittyPerson / ThePerson</span>
+            <span class="os-badge-merged">
+              <span class="os-badge-dot"></span>Merged · PR #45
+            </span>
+          </div>
+          <h3 class="os-card-title">existential_crisis — Feature Method</h3>
+          <p class="os-card-repo mono">
+            <a href="https://github.com/TheGittyPerson/ThePerson/pull/45" target="_blank" rel="noopener">github.com/TheGittyPerson/ThePerson</a>
+          </p>
+          <p class="os-card-desc">
+            Implemented the <code>existential_crisis()</code> method from scratch in <code>person.py</code>.
+            Went through a full maintainer review cycle — addressed docstring formatting, rebase workflow
+            (not merge commits), and clean scoping of changes. All CI/CD checks passed on final commit.
+          </p>
+          <div class="os-tag-row">
+            <span class="os-tag">Python</span>
+            <span class="os-tag">OOP</span>
+            <span class="os-tag">Git Rebase</span>
+            <span class="os-tag">CI/CD</span>
+            <span class="os-tag">Code Review</span>
+          </div>
+          <div class="os-card-footer">
+            <span class="os-meta mono">Issue #44 → PR #45 · Mar 2026</span>
+            <a href="https://github.com/TheGittyPerson/ThePerson/pull/45" target="_blank" rel="noopener" class="os-pr-link mono">View PR ↗</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- amFOSS footnote -->
+      <div class="os-community-note reveal-up" style="--delay:0.3s">
+        <span class="os-comm-dot"></span>
+        <p class="mono">Learned open-source contribution through <span class="accent">amFOSS</span> — the open-source developer community at Amrita Vishwa Vidyapeetham.</p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ══════════════ CONTACT ══════════════ -->
   <section id="contact">
     <div class="container">
       <div class="section-eyebrow reveal-up">
-        <span class="mono accent">// 05</span>
+        <span class="mono accent">// 06</span>
         <span class="eyebrow-line"></span>
         <span>Contact</span>
       </div>
@@ -594,7 +683,7 @@
               </div>
               <div class="cl-info">
                 <p class="cl-label mono">Email</p>
-                <p class="cl-val">nithishkumar.dev10@gmail.com</p>
+                <p class="cl-val"><span class="__cf_email__" data-cfemail="402e2934282933282b352d21326e242536717000272d21292c6e232f2d">[email&#160;protected]</span></p>
               </div>
               <span class="cl-arrow">↗</span>
             </a>
@@ -660,6 +749,7 @@
           <a href="#about" class="mono">About</a>
           <a href="#skills" class="mono">Skills</a>
           <a href="#projects" class="mono">Projects</a>
+          <a href="#opensource" class="mono">Open Source</a>
           <a href="#contact" class="mono">Contact</a>
         </div>
         <div class="footer-right mono dim" style="font-size:0.72rem;">
