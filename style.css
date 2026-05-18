@@ -1193,9 +1193,13 @@ footer {
 
 .os-cards-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 3rem;
+}
+
+@media (max-width: 1100px) {
+  .os-cards-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -1390,15 +1394,3 @@ footer {
 }
 
 .os-community-note .accent { color: var(--accent); }
-
-/* TransReliant repo link */
-.proj-repo-link {
-  display: inline-block;
-  margin-top: 0.85rem;
-  font-size: 0.72rem;
-  color: var(--accent);
-  opacity: 0.7;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-.proj-repo-link:hover { opacity: 1; text-decoration: underline; }
