@@ -17,6 +17,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   setTimeout(dismissLoader, 1200);
 
+  
+
   /* ── CANVAS PARTICLE NETWORK ── */
   const canvas = document.getElementById('hero-canvas');
   if (canvas) {
