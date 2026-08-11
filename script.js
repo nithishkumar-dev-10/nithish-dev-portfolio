@@ -5,6 +5,7 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
+
   /* ── LOADER ── */
   const loader = document.getElementById('loader');
   function dismissLoader() {
@@ -16,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 300);
   }
   setTimeout(dismissLoader, 1200);
+
 
   /* ── CANVAS PARTICLE NETWORK ── */
   const canvas = document.getElementById('hero-canvas');
@@ -57,6 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle = 'rgba(' + COLOR + ',0.55)';
         ctx.fill();
       });
+
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -85,6 +88,7 @@ window.addEventListener('DOMContentLoaded', () => {
       mouse.y = e.clientY - rect.top;
     });
   }
+  
 
   /* ── CUSTOM CURSOR ── */
   const cursor   = document.getElementById('cursor');
