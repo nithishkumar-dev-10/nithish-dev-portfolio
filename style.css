@@ -3,6 +3,7 @@
    Dark · Refined · AI Engineer Aesthetic
 ═══════════════════════════════════════════ */
 
+
 :root {
   --bg:          #07090d;
   --bg2:         #0c0f16;
@@ -42,6 +43,7 @@ body {
   cursor: none;
   -webkit-font-smoothing: antialiased;
 }
+
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
@@ -59,6 +61,7 @@ em { font-style: normal; color: var(--accent); }
 
 /* ── CONTAINER ── */
 .container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
+
 
 /* ══════════════ CURSOR ══════════════ */
 #cursor {
